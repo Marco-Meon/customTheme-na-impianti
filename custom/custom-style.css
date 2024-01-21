@@ -1,0 +1,445 @@
+/* ! Base style */
+/* ----------------------------------------------------------------------------------- */
+body{background: #E7E6D6;color: #000; font-size: 16px; font-family: 'Italiana', Arial, Helvetica, sans-serif;}
+
+
+/* ! Title System */
+/* ----------------------------------------------------------------------------------- */
+.text-0{font-size: 5rem;}
+h1, .text-1 {font-size: 3.5rem;margin-bottom:0.5rem}
+h2, .text-2 {font-size: 2.4rem;margin-bottom:1rem}
+h3, .text-3  {font-size: 1.8rem;margin-bottom:1rem}
+h4, p, .text-4 {font-size: 1rem;margin-bottom:1rem; line-height: 1.3;}
+a{color: #7D7C4B}
+
+@media (max-width: 768px) {
+  .text-0{font-size: 4rem;}
+}
+
+
+/* ! Button System */
+/* ----------------------------------------------------------------------------------- */
+.button, .wp-block-button__link{  color: #fff;text-transform: uppercase;text-decoration: none;border: 2px solid #fff;padding: 14px 25px;font-size: 2.5rem;font-weight: 400;background: #072F00;position: relative;transition: all 1s;overflow: hidden;z-index: 1;}
+.button:hover, .wp-block-button__link:hover{color: #072F00;z-index: 2;border: 2px solid #072F00;}
+.button::before, .wp-block-button__link::before {content: '';position: absolute;height: 100%;width: 0%;top: 0;left: -40px;transform: skewX(45deg);background-color: #fff;transition: all 1s;z-index: -1;}
+.button:hover::before, .wp-block-button__link:hover::before{width: 160%;}
+@media (hover:none) {
+  .button:hover, .wp-block-button__link:hover{color: #fff;z-index: 2;border: 2px solid #fff;}
+  .button:hover::before,  .wp-block-button__link:hover::before{width: 0%;}
+}
+
+
+/* ! Cover */
+/* ----------------------------------------------------------------------------------- */
+.cover{min-height: 100vh; display: flex; flex-flow: column;justify-content: center;align-items: center;text-align: center;position: relative;flex-direction: row;}
+.cover:after {content: ' ';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0);background-size: cover;}
+
+.cover__content{margin: 0 auto; position: relative;z-index: 1;display: flex;justify-content: center;flex-direction: column;align-items: center;}
+.cover__title{font-size: 15vw;text-transform: uppercase;font-weight: 400;z-index: 1;margin: 0;}
+.cover__content h1{text-indent: -9999px;font-size: 0px;padding: 0;margin: 0;}
+.cover__subtitle{font-size: 4vw;text-transform: uppercase;font-weight: 400;z-index: 1;}
+.cover__button{margin-top: 20px;font-size: 2.5rem;}
+
+@media (max-width: 1000px) {
+  .cover:after {content: ' ';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.6);background-size: cover;}
+  .cover__title{font-size: 18vw;margin-bottom: 10px;}
+  .cover__subtitle{font-size: 5.5vw;}
+  .cover__button{font-size: 2.5rem;}
+}
+@media (max-width: 768px) {
+  .cover__button{font-size: 1.7rem;}
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .cover__title{font-size: 15vw;margin-bottom: 10px;}
+  .cover__subtitle{font-size: 3.5vw;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Section-1 */
+/* -------------------------------------------------------------------------------- */
+.section-1{height: auto;position: relative;}
+.section-1__top-text{width: 100%;display: flex;justify-content: space-between;align-items: end;}
+.section-1__top-text-right, .section-1__top-text-left{font-size: 1.4rem;}
+.section-1__line{width: 100%;height: 1px;background: #000;}
+.section-1__content{font-size: 3rem;}
+@media (max-width: 768px) {
+  .section-1__top-text-right, .section-1__top-text-left{font-size: 1rem;}
+  .section-1__content{font-size: 2rem;}
+}
+@media (max-width: 350px) {
+  .section-1__top-text-right, .section-1__top-text-left{font-size: 0.8rem;}
+  .section-1__content{font-size: 1.6rem;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Section 2 */
+/* -------------------------------------------------------------------------------- */
+.section-2{height: auto;}
+.section-2__container{display: flex;flex-direction: row;}
+.section-2__img{width: 100%;border-radius: 50px;height: 100%; overflow: hidden;object-fit: cover;}
+.section-2__content{background: #072F00;height: 100%;border-radius: 50px;color: #fff;padding: 70px 50px;display: flex;justify-content: center;flex-direction: column;}
+.section-2__content h2{font-size:3rem;font-weight: 400;}
+.section-2__content p{font-size: 25px;font-weight: 400;}
+.section-2__line{width: 100%;height: 1px;background: #fff;margin-bottom: 1rem;}
+.section-2__cta{color: #7D7C4B;font-size: 2.5rem;position: relative;text-transform: uppercase;}
+.section-2__cta::after {margin-left: auto;}
+.section-2__cta::after {content: "";position: absolute;width: 40%;transform: scaleX(0);height: 2px;bottom: 0;left: 0;background-color: #7D7C4B;transform-origin: bottom right;transition: transform 0.25s ease-out;}
+.section-2__cta:hover::after {transform: scaleX(1);transform-origin: bottom left;}
+
+@media (hover: none) {
+  .section-2__cta::after {transform: scaleX(1);}
+  .section-2__cta::after{width: 0%;}
+}
+@media (max-width: 900px) {
+  .section-2__container{flex-direction: column;}
+  .section-2__img{max-height: 60vh;}
+  .section-2__content-text, .section-2__content-img{width: 100%;}
+  .section-2__content-text{margin-top: 20px;}
+}
+@media (max-width: 768px) {
+  .section-2__content-text{margin-top: 20px;}
+  .section-2__content{padding: 50px 40px;}
+  .section-2__content h2{font-size:3rem;font-weight: 400;}
+  .section-2__content p{font-size: 20px;font-weight: 400;}
+}
+@media (max-width: 400px) {
+  .section-2__content h2{font-size:2.5rem;font-weight: 400;}
+}
+@media (max-width: 300px) {
+  .section-2__content{padding: 50px 25px;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! section 3 */
+/* -------------------------------------------------------------------------------- */
+.section-3 .col-90{text-align: center;}
+.section-3 h2{font-size: 5rem;font-weight: 400;}
+.section-3 p{font-size: 2.7rem;}
+@media (max-width: 768px) {
+  .section-3 h2{font-size: 3rem;font-weight: 400;}
+  .section-3 p{padding: 20px;font-size: 2rem;}
+}
+@media (max-width: 500px) {
+  .section-3 h2{font-size: 2.3rem;font-weight: 400;}
+  .section-3 p{padding: 20px;font-size: 1.5rem;padding: 10px;}
+}
+@media (max-width: 350px) {
+  .section-3 p{font-size: 1.6rem;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Section 4 */
+/* -------------------------------------------------------------------------------- */
+.section-4{height: auto;}
+.section-4__container{display: flex;flex-direction: row;}
+.section-4__img{width: 100%;border-radius: 50px;height: 100%;overflow: hidden;object-fit: cover;}
+.section-4__content{background: #072F00;height: 100%;border-radius: 50px;color: #fff;padding: 70px 50px;display: flex;justify-content: center;flex-direction: column;}
+.section-4__content h2{font-size:3rem;font-weight: 400;}
+.section-4__content p{font-size: 25px;font-weight: 400;}
+.section-4__line{width: 100%;height: 1px;background: #fff;margin-bottom: 1rem;}
+.section-4__cta{color: #7D7C4B;font-size: 2.5rem;position: relative;text-transform: uppercase;}
+.section-4__cta::after {margin-left: auto;}
+.section-4__cta::after {content: "";position: absolute;width: 40%;transform: scaleX(0);height: 2px;bottom: 0;left: 0;background-color: #7D7C4B;transform-origin: bottom right;transition: transform 0.25s ease-out;}
+.section-4__cta:hover::after {transform: scaleX(1);transform-origin: bottom left;}
+
+@media (hover: none) {
+  .section-4__cta::after {transform: scaleX(1);}
+  .section-4__cta::after{width: 0%;}
+}
+@media (max-width: 900px) {
+  .section-4__container{flex-direction: column;}
+  .section-4__img{max-height: 60vh;}
+  .section-4__content-text, .section-4__content-img{width: 100%;}
+  .section-4__content-img{margin-top: 20px;}
+}
+@media (max-width: 768px) {
+  .section-4__content-img{margin-top: 20px;}
+  .section-4__content{padding: 50px 40px;}
+  .section-4__content h2{font-size:3rem;font-weight: 400;}
+  .section-4__content p{font-size: 20px;font-weight: 400;}
+}
+@media (max-width: 400px) {
+  .section-4__content h2{font-size:2.5rem;font-weight: 400;}
+}
+@media (max-width: 300px) {
+  .section-4__content{padding: 50px 25px;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Section 5 */
+/* -------------------------------------------------------------------------------- */
+.section-5__container-1{display: flex;flex-direction: row;}
+.section-5__img{width: 100%;border-radius: 50px;max-height: 70vh;overflow: hidden;object-fit: cover;}
+.section-5__container-1 .col-40{display: flex;justify-content: flex-start;flex-direction: column;align-items: center;}
+.section-5__container-1 .col-40 h2{font-size: 3rem;text-align: center;font-weight: 400;}
+.section-5__container-1 .col-40 p{text-align: center;font-size: 1.5rem;}
+
+.section-5__container-2{display: flex;flex-direction: row;transform: translateY(-50px);}
+.section-5__container-2 .col-40{display: flex;justify-content: flex-end;flex-direction: column;align-items: center;}
+.section-5__container-2 .col-40 h2{font-size: 3rem;text-align: center;font-weight: 400;}
+.section-5__container-2 .col-40 p{text-align: center;font-size: 1.5rem;}
+
+@media (max-width: 1200px) {
+  .section-5__container-1 .col-40 h2{font-size: 2.5rem;margin-bottom: 0;}
+  .section-5__container-2 .col-40 h2{font-size: 2.5rem;margin-bottom: 0;}
+  .section-5__container-1 .col-40 p{text-align: center;font-size: 1.2rem;}
+  .section-5__container-2 .col-40 p{text-align: center;font-size: 1.2rem;}
+}
+@media (max-width: 1000px) {
+  .section-5__container-1{flex-direction: column-reverse;align-items: center;margin-bottom: 50px;}
+  .section-5__container-2{flex-direction: column;transform: translateY(0px);align-items: center;}
+  .section-5__container-1 .col-60, .section-5__container-2 .col-60{width: 80%;}
+  .section-5__container-1 .col-40, .section-5__container-2 .col-40{width: 80%;}
+  .section-5__container-1 .col-40 h2{font-size: 3rem;margin-bottom: 0;}
+  .section-5__container-2 .col-40 h2{font-size: 3rem;margin-bottom: 0;}
+  .section-5__container-1 .col-40 p{text-align: center;font-size: 1.4rem;}
+  .section-5__container-2 .col-40 p{text-align: center;font-size: 1.4rem;}
+}
+@media (max-width: 768px) {
+  .section-5__container-1 .col-60, .section-5__container-2 .col-60{width: 100%;}
+  .section-5__container-1 .col-40, .section-5__container-2 .col-40{width: 100%;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Section 6 */
+/* -------------------------------------------------------------------------------- */
+.section-6__text{display: flex;justify-content: space-between;align-items: center;padding: 0 30px;}
+.section-6__text h2{font-size: 4rem;font-weight: normal;}
+.section-6__text a{font-size: 2rem;position: relative;}
+.section-6__text a::before{content: " ";width: 25px;height: 25px;position: absolute;top: 50%;left: -30px;transform: translateY(-50%);background-size: 100%;background-image: url(img/Na-Impianti-elettrici-fotovoltaico-videosorveglianza-arrow-varese.svg);}
+.section-6__text a::after {content: "";position: absolute;width: 100%;transform: scaleX(0);height: 2px;bottom: 0;left: 0;background-color: #7D7C4B;transform-origin: bottom right;transition: transform 0.25s ease-out;}
+.section-6__text a:hover::after {transform: scaleX(1);transform-origin: bottom left;}
+.section-6__img{width: 33%;min-height: 600px;object-fit: cover;padding: 0 10px;border-radius: 50px;}
+.section-6__hidden{display: none;}
+
+@media (hover: none) {
+  .section-6__text a::after {transform: scaleX(1);}
+}
+@media (max-width: 1000px) {
+  .section-6__text{justify-content: center;}
+  .section-6__text h2{font-size: 5rem;font-weight: normal;text-align: center;}
+  .section-6__text a{display: none;}
+  .section-6__image{display: flex;justify-content: center;flex-direction: row;flex-wrap: wrap;}
+  .section-6__img{min-height: 400px;margin-top: 10px;}
+
+  .section-6__hidden{display: block;margin-top: 15px;}
+  .section-6__hidden a{font-size: 2.5rem;position: relative;}
+  .section-6__hidden a::before{content: " ";width: 25px;height: 25px;position: absolute;top: 50%;left: -30px;transform: translateY(-50%);background-size: 100%;background-image: url(img/Na-Impianti-elettrici-fotovoltaico-videosorveglianza-arrow-varese.svg);}
+}
+@media (max-width: 600px) {
+  .section-6__img{width: 100%;}
+}
+@media (max-width: 500px) {
+  .section-6__text h2{font-size: 3rem;}
+}
+@media (max-width: 300px) {
+  .section-6__text h2{font-size: 2.3rem;}
+  .section-6__hidden a{font-size: 2rem;position: relative;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Section 7 */
+/* -------------------------------------------------------------------------------- */
+.section-7{flex-direction: column;align-items: center;}
+.section-7 h2{font-size: 5rem;font-weight: 400;}
+
+.options {display: flex;flex-direction: row;align-items: stretch;overflow: hidden;min-width: 600px;max-width: 1200px;width: calc(100% - 100px);height: 400px;}
+.option {position: relative;overflow: hidden;min-width: 110px;margin: 10px;background: var(--optionBackground);background-size: auto 120%;background-position: center;cursor: pointer;transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);}
+
+.option.active {flex-grow: 10000;transform: scale(1);max-width: 600px;margin: 0px;border-radius: 40px;background-size: auto 100%;}
+.option.active .shadow {box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;}
+.option.active .label {bottom: 20px;left: 20px;}
+.option.active .label .info > div {left: 0px;opacity: 1;}
+
+.option:not(.active) {flex-grow: 1;border-radius: 50px;}
+.option:not(.active) .shadow {bottom: -40px;box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;}
+.option:not(.active) .label {bottom: 10px;left: 10px;}
+.option:not(.active) .label .icon {left: 25px;position: absolute;bottom: 15px;}
+.option:not(.active) .label .info  {left: 20px;opacity: 0;}
+
+.option .shadow {position: absolute;bottom: 0px;left: 0px;right: 0px;height: 120px;transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);}
+.option .label {display: flex;position: absolute;right: 0px;height: 40px;transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);}
+.option .label .icon {display: flex;flex-direction: row;justify-content: center;align-items: center;min-width: 40px;max-width: 40px;height: 40px;border-radius: 100%;background-color: white;}
+.option .label .info {display: flex;flex-direction: column;justify-content: center;margin-left: 10px;color: white;white-space: pre;}
+.option .label .info {position: relative;transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;}
+.option .label .info .main {font-weight: bold;font-size: 1.4rem;}
+.option .label .info .sub {font-size: 1.2rem; color: #aaa720;transition-delay: 0.1s;position: relative;text-decoration: underline;transition: all 0.5s cubic-bezier(.215, .61, .355, 1);}
+.option .label .info .sub:hover{color: #dfdc2f;}
+
+.icon-1 .fas{background: url(img/Na-Impianti-elettrici-fotovoltaico-videosorveglianza-logo-icona-impianti-elettrici-varese.png);width: 26px;height: 32px;background-size: cover;}
+.icon-2 .fas{background: url(img/Na-Impianti-elettrici-fotovoltaico-videosorveglianza-logo-icona-illuminazione-varese.png);width: 20px;height: 32px;background-size: cover;}
+.icon-3 .fas{background: url(img/Na-Impianti-elettrici-fotovoltaico-videosorveglianza-logo-icona-pannelli-fotovoltaici-varese.png);width: 34px;height: 32px;background-size: cover;}
+.icon-4 .fas{background: url(img/Na-Impianti-elettrici-fotovoltaico-videosorveglianza-logo-icona-anti-intrusione-varese.png);width: 31px;height: 32px;background-size: cover;}
+.icon-5 .fas{background: url(img/Na-Impianti-elettrici-fotovoltaico-videosorveglianza-logo-icona-video-sorveglianza-varese.png);width: 40px;height: 26px;background-size: cover;}
+.icon-6 .fas{background: url(img/Na-Impianti-elettrici-fotovoltaico-videosorveglianza-logo-icona-automazioni-varese.png);width: 40px;height: 26px;background-size: cover;}
+
+@media (max-width: 1050px) {
+  .option{min-width: 60px;}
+  .options{max-width: 900px;}
+  .option:not(.active) .label .icon {left: 0;position: absolute;bottom: 0;}
+}
+@media screen and (max-width: 798px) {
+  .options {min-width: 600px;flex-direction: column;height: auto;}
+  .option.active {flex-grow: 1;border-radius: 50px;margin: 10px; max-width: 800px;height: 80px;background-size: cover;}
+  .option.active .label {bottom: 25px;}
+  .option{background-size: cover;display: flex;justify-content: center;}
+  .option:not(.active){height: 80px;background-size: auto 100%;background-size: cover;}
+  .option:not(.active) .label .info {opacity: 1;left: 40px;}
+  .option:not(.active) .label {bottom: 25px;left: 20px;}
+  .option:not(.active) .shadow {box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black!important;}
+  .option.active .shadow{box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;}
+}
+@media screen and (max-width: 718px) {
+  .options {min-width: 520px;}
+}
+@media screen and (max-width: 638px) {
+  .options {min-width: 440px;}
+}
+@media screen and (max-width: 558px) {
+  .options {min-width: 360px;}
+}
+@media (max-width: 500px) {
+  .section-7 h2{font-size: 3rem;}
+  .option .label .info .main {font-size: 1.2rem;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Gallery */
+/* -------------------------------------------------------------------------------- */
+.gallery-title{margin-top: 100px;display:flex;justify-content: center;align-items: center;}
+.gallery-title h1{font-size: clamp(75px, 10vw, 200px);font-weight: normal;text-align: center;}
+.ct-section-line{height: 80vh;}
+.ct-section{display: grid;grid-template-columns: repeat(3,1fr);min-height: 100vh;margin-top: -50vh;}
+.gllery{height: 100vh;}
+.ct-img{width: 100%;height: 700px;position: relative;z-index: -1;}
+.ct-img img{width: 100%;height: 100%;object-fit: cover;}
+
+.ct-img::before{content: "";position: absolute;height: 100vh;width: 100%;z-index: 4;top: 0;left: 0;border-right: 1px solid #000;}
+.section-1__line{border-right: 1px solid #000;}
+@media (max-width: 768px) {
+  .ct-section{display: grid;grid-template-columns: repeat(1,1fr)}
+  .ct-img{margin-top: 10px;margin-bottom: 10px;padding: 10px;}
+}
+
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Page contatti */
+/* -------------------------------------------------------------------------------- */
+.page-id-10 h1{text-align: center;}
+.page-id-10 .wpcf7{display: flex;justify-content: center;}
+.page-id-10 .wpcf7-form{display: flex;align-items: center;flex-direction: column;width: 50%;}
+.page-id-10 .wpcf7-form p{width: 100%;}
+.page-id-10 .wpcf7-form p input{width: 100%;}
+.page-id-10 .wpcf7-form p textarea{width: 100%;}
+.page-id-10 .wpcf7-text{background: transparent;border: none;border-bottom: 1px solid #000;}
+.page-id-10 .wpcf7-textarea{background: transparent;border: 1px solid #000;}
+.page-id-10 .wpcf7-select{background: transparent;border: 1px solid #000;}
+
+.page-id-10 .wpcf7-submit{width: 100%; color: #fff;text-transform: uppercase;text-decoration: none;border: 2px solid #fff;padding: 14px 25px;font-size: clamp(30px, 5vw, 75px);font-weight: 400;background: #072F00;transition: all 0.5s;overflow: hidden;cursor: pointer;}
+.page-id-10 .wpcf7-submit:hover{color: #072F00;z-index: 0;background: #fff;border: 2px solid #072F00;}
+
+@media (hover:none) {
+  .page-id-10 .wpcf7-submit:hover{color: #fff;z-index: 2;border: 2px solid #fff;background: #072F00;}
+}
+@media (max-width: 768px) {
+  .page-id-10 .wpcf7-form{width: 100%;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Sotto pagine */
+/* -------------------------------------------------------------------------------- */
+.page-template-default h1{font-size: 0;text-indent: 9999px;margin: 0;}
+
+/* cover  */
+.page-template-default .sub-cover{position: relative;border-radius: 50px;height: 80vh;}
+.page-template-default .sub-cover img{border-radius: 50px;}
+.page-template-default .sub-cover:after {content: ' ';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);background-size: cover;border-radius: 50px;}
+.page-template-default .sub-cover .wp-block-cover__background{display: none;}
+.page-template-default .sub-cover p{font-size: 8vw!important;}
+@media (max-width: 650px) {
+  .page-template-default .sub-cover{align-items: center;}
+  .page-template-default .sub-cover:after{background: rgb(0,0,0,0.5)}
+  .page-template-default .sub-cover p{font-size: 12vw!important;}
+}
+
+/* section 1  */
+.page-template-default .title-section-1{font-size: clamp(50px, 6vw, 75px);font-weight: 400;}
+.page-template-default .text-section-1{font-size: clamp(22px, 3vw, 25px);font-weight: 400;}
+.page-template-default .img-section-1 img{height: 80vh;object-fit: cover;}
+@media (max-width: 768px) {
+  .page-template-default .text-section-1{font-size: 22px;font-weight: 400;}
+}
+@media (max-width: 600px) {
+  .page-template-default .img-section-1 .wp-block-media-text__content{padding: 0;}
+  .page-template-default .title-section-1{text-align: center;}
+  .page-template-default .text-section-1{text-align: center;}
+  .page-template-default .img-section-1 .wp-block-media-text__media{grid-row: 2;}
+  .page-template-default .img-section-1 .wp-block-media-text__content{grid-row: 1;}
+}
+
+/* section 2  */
+.page-template-default .column-section-2{width: 80vw;margin: 0 auto;}
+.page-template-default .title-section-2{font-size: clamp(50px, 6vw, 75px);font-weight: 400;}
+.page-template-default .text-section-2{font-size: clamp(23px, 3vw, 30px);font-weight: 400;}
+@media (max-width: 600px) {
+  .page-template-default .column-section-2{width: 90vw;margin: 0 auto;}
+}
+
+/* section 3  */
+.page-template-default .img-section-3 img{height: 100vh;object-fit: cover;}
+
+/* section 4  */
+.wp-block-media-text__media{max-height: 80vh;overflow: hidden;}
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__media{height: 100%;}
+.page-template-default .title-section-4{font-size: clamp(50px, 6vw, 75px);font-weight: 400;margin-top: 20px;}
+.page-template-default .text-section-4{font-size: clamp(20px, 3vw, 25px);font-weight: 400;}
+.page-template-default .img-section-4 img{height: 100%!important; object-fit: cover;}
+.page-template-default .img-section-4 .wp-block-media-text__content{border: 2px solid #000;height: 80vh;margin-right: 10px;}
+@media (max-width: 600px) {
+  .page-template-default .img-section-4 img{height: 60vh;object-fit: cover;}
+  .page-template-default .img-section-4 .wp-block-media-text__content{margin-right: 0px;margin-bottom: 10px;height: auto;}
+  .page-template-default .img-section-4 .wp-block-media-text__media{grid-row: 2;}
+  .page-template-default .img-section-4 .wp-block-media-text__content{grid-row: 1;}
+}
+
+
+/* section 6  */
+.page-template-default .title-section-6{font-size: clamp(50px, 6vw, 75px);font-weight: 400;}
+.page-template-default .img-section-6{height: 70vh;position: relative;cursor: pointer;}
+.page-template-default .img-section-6:before{content: ' ';position: absolute;bottom: 0;left: 0;width: 100%;height: 0%;background: rgb(255,255,255,0.8);background-size: cover;z-index: 1;transition: all 1s cubic-bezier(.215, .61, .355, 1);}
+.page-template-default .img-section-6:hover:before{height: 100%;border: 3px solid #7D7C4B;}
+.page-template-default .img-section-6:after {content: ' ';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);background-size: cover;}
+.page-template-default .img-section-6 .wp-block-cover__background{display: none;}
+.page-template-default .img-section-6 a{position: relative;}
+.page-template-default .img-section-6 a::before{content: " ";opacity: 0; width: 25px;height: 25px;position: absolute;top: 50%;left: -30px;transform: translateY(-50%);background-size: 100%;background-image: url(img/Na-Impianti-elettrici-fotovoltaico-videosorveglianza-arrow-varese.svg);transition: all 0.5s cubic-bezier(.215, .61, .355, 1);}
+.page-template-default .img-section-6:hover.img-section-6 a::before{opacity: 1;}
+.page-template-default .img-section-6 a::after {content: "";position: absolute;width: 100%;transform: scaleX(0);height: 2px;bottom: 0;left: 0;background-color: #7D7C4B;transform-origin: bottom right;transition: transform 0.25s ease-out;}
+.page-template-default .img-section-6 a:hover::after {transform: scaleX(1);transform-origin: bottom left;}
+@media (hover: none) {
+  .page-template-default .img-section-6 a::after {transform: scaleX(1);}
+  .page-template-default .img-section-6:hover:before{height: 0%;border: 0px solid #7D7C4B;}
+  .page-template-default .img-section-6 a::before{display: none;}
+}
+@media (max-width: 850px) {
+  .page-template-default .img-section-6{height: 60vh;}
+}
+@media (max-width: 781px) {
+  .page-template-default .img-section-6{height: 50vh;}
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ! Animation */
+/* -------------------------------------------------------------------------------- */
+.text-reveal{transform: translateY(1rem); clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);}
+.fade-up{opacity: 0; transform: translateY(5rem);}
